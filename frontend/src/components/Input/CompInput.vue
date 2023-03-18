@@ -18,7 +18,13 @@ function handleAddTodo() {
     key: parseInt(check.value),
     name: refTask.value,
   });
-  fetch("http://localhost:3000/users/")
+  fetch("http://localhost:3000/users/",{
+    method: "POST",
+    body: JSON.stringify({
+      name:"khanh",
+      age:10,
+    }),
+  })
   .then(res=>res.json())
   .then((data)=>{console.log("check api",data)})
 }
