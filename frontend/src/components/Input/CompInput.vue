@@ -2,7 +2,6 @@
   <div>
     <input type="text" v-model="refTask" />
     <button @click="handleAddTodo">Add</button>
-    
   </div>
 </template>
 <script setup>
@@ -19,6 +18,9 @@ function handleAddTodo() {
     key: parseInt(check.value),
     name: refTask.value,
   });
+  fetch("http://localhost:3000/users/")
+  .then(res=>res.json())
+  .then((data)=>{console.log("check api",data)})
 }
 </script>
 <style lang="scss" scoped>
